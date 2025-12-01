@@ -1,0 +1,1411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1" />
+  <title>Chhetri Lab - Turfgrass Management and PGR Programs</title>
+  <meta
+    name="description"
+    content="Chhetri Lab at Penn State focuses on turfgrass management, plant growth regulators, and Poa annua seedhead control programs." />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Chhetri Lab - Turfgrass Management and PGR Programs" />
+  <meta property="og:description" content="Research on Poa annua seedhead control, turfgrass management under environmental stress, and practical tools for golf and sports turf." />
+  <meta property="og:type" content="website" />
+
+  <!-- Simple base styling -->
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020819;
+      --card: #0f172a;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --link: #38bdf8;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.5);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header and nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.88),
+        transparent
+      );
+      border-bottom: 1px solid rgba(15, 23, 42, 0.98);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .lab-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 25% 0, #4ade80, #0f172a 55%);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #ecfeff;
+    }
+
+    .lab-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .lab-title span {
+      display: block;
+    }
+
+    .lab-name {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+
+    .lab-tagline {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background 0.16s ease, color 0.16s ease, transform 0.12s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: linear-gradient(
+        to right,
+        rgba(34, 197, 94, 0.14),
+        rgba(8, 47, 73, 0.3)
+      );
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+
+    .nav-cta-icon {
+      font-size: 0.9rem;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      border-radius: 999px;
+      padding: 0.35rem 0.6rem;
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-links.is-open {
+        position: absolute;
+        top: 56px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: min(90vw, var(--max-width));
+        padding: 0.75rem;
+        background: #020617;
+        border-radius: 16px;
+        border: 1px solid rgba(15, 23, 42, 0.95);
+        box-shadow: var(--shadow-soft);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3.25rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-title span.highlight {
+      background: radial-gradient(circle at top left, #4ade80, #22c55e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+    }
+
+    .hero-list li span.bullet {
+      margin-top: 0.12rem;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background 0.12s ease, border-color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
+      border-color: rgba(34, 197, 94, 0.3);
+      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.5);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 0.8);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      background: radial-gradient(circle at top, #22c55e 0, #0b1120 35%);
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual-inner {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 20px;
+      padding: 1rem;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .mini-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .mini-heading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .metric-card {
+      padding: 0.55rem 0.6rem;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 1);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .metric-tag {
+      margin-top: 0.2rem;
+      font-size: 0.7rem;
+      color: #a5b4fc;
+    }
+
+    .mini-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pill-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 1);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 1.2rem;
+      bottom: 1.1rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(8, 47, 73, 0.92);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      font-size: 0.78rem;
+      color: #e0f2fe;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-badge span.icon {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 2.5rem;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 2.75rem 0;
+      border-top: 1px solid rgba(15, 23, 42, 0.98);
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at top, #020617 0, #020617 65%);
+    }
+
+    .section-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    /* Research themes */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .card-body {
+      color: var(--muted);
+    }
+
+    .card-list {
+      margin-top: 0.4rem;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .card-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    @media (max-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Project section */
+    .project-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .project-list {
+      margin-top: 0.45rem;
+      padding-left: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .project-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-pill {
+      display: inline-flex;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(6, 78, 59, 0.7);
+      border: 1px solid rgba(22, 163, 74, 0.75);
+      font-size: 0.78rem;
+      color: #bbf7d0;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .project-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* People section */
+    .people-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .profile-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .profile-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0, #4ade80, #0f172a 60%);
+      border: 2px solid rgba(148, 163, 184, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ecfeff;
+    }
+
+    .profile-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .profile-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .profile-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .profile-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .chip-link {
+      border-radius: var(--radius-pill);
+      padding: 0.25rem 0.6rem;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 1);
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .chip-link:hover {
+      color: var(--text);
+      text-decoration: none;
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .people-list {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 18px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 1rem;
+    }
+
+    .people-list-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .people-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.35rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(30, 64, 175, 0.3);
+    }
+
+    .people-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .people-role-small {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+    }
+
+    .people-note {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .people-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Publications */
+    .pub-list {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .pub-item {
+      padding: 0.8rem 0.9rem;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(31, 41, 55, 1);
+    }
+
+    .pub-title {
+      font-weight: 500;
+    }
+
+    .pub-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Facilities and opportunities reuse project-card styling */
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.92rem;
+    }
+
+    .contact-row {
+      margin-bottom: 0.45rem;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .contact-value {
+      font-size: 0.94rem;
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .field label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field textarea {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 12px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 0.5rem 0.6rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid rgba(34, 197, 94, 0.7);
+      outline-offset: 1px;
+      border-color: rgba(34, 197, 94, 0.8);
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid rgba(15, 23, 42, 1);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container">
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav-left">
+            <div class="lab-badge">CL</div>
+            <div class="lab-title">
+              <span class="lab-name">Chhetri Lab</span>
+              <span class="lab-tagline">Turfgrass Management and PGR Programs</span>
+            </div>
+          </div>
+
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+            <span>☰</span> Menu
+          </button>
+
+          <div class="nav-links" id="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#project">Current project</a>
+            <a href="#people">People</a>
+            <a href="#publications">Publications</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#contact">Contact</a>
+            <a
+              class="nav-cta"
+              href="#contact">
+              <span class="nav-cta-icon">✉</span>
+              Contact the lab
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero / About -->
+      <section class="hero" id="about">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <p class="hero-kicker">Penn State - Department of Plant Science</p>
+              <h1 class="hero-title">
+                Improving <span class="highlight">Poa annua seedhead control</span>
+                and turfgrass performance.
+              </h1>
+              <p class="hero-subtitle">
+                The Chhetri Lab focuses on turfgrass management under real world stress,
+                with a strong emphasis on plant growth regulator programs, Poa annua seedhead control on
+                golf course greens and fairways, and practical recommendations for turf managers.
+              </p>
+
+              <ul class="hero-list">
+                <li>
+                  <span class="bullet">●</span>
+                  <span>Optimizing PGR timing and combinations for annual bluegrass seedhead suppression.</span>
+                </li>
+                <li>
+                  <span class="bullet">●</span>
+                  <span>Understanding turf response to shade, drought, heat, cold, and traffic.</span>
+                </li>
+                <li>
+                  <span class="bullet">●</span>
+                  <span>Translating field trials into clear, usable guidance for golf and sports turf.</span>
+                </li>
+              </ul>
+
+              <div class="hero-actions">
+                <a href="#research" class="btn-primary">
+                  Explore research areas
+                  <span>↓</span>
+                </a>
+                <a href="#project" class="btn-ghost">
+                  View current seedhead project
+                </a>
+              </div>
+
+              <p class="hero-footnote">
+                Remote sensing tools like NDVI meters and simple image based ratings are used when they help,
+                but our core focus is plant growth regulators, turf quality, and playability.
+              </p>
+            </div>
+
+            <aside class="hero-visual" aria-label="Lab focus overview">
+              <div class="hero-visual-inner">
+                <div>
+                  <p class="mini-title">Lab focus snapshot</p>
+                  <p class="mini-heading">PGR programs and environmental stress</p>
+                  <p class="mini-note">
+                    We study how plant growth regulators and stress management programs affect Poa annua,
+                    creeping bentgrass, bermudagrass, and other key turf species under conditions that match
+                    golf and sports turf management.
+                  </p>
+
+                  <div class="metric-grid" aria-label="Key areas">
+                    <div class="metric-card">
+                      <p class="metric-label">Key species</p>
+                      <p class="metric-value">Poa annua</p>
+                      <p class="metric-tag">With creeping bentgrass</p>
+                    </div>
+                    <div class="metric-card">
+                      <p class="metric-label">Main tools</p>
+                      <p class="metric-value">PGR programs</p>
+                      <p class="metric-tag">Seedhead and quality</p>
+                    </div>
+                    <div class="metric-card">
+                      <p class="metric-label">Stress types</p>
+                      <p class="metric-value">Shade, drought, traffic</p>
+                      <p class="metric-tag">Plus heat and cold</p>
+                    </div>
+                  </div>
+
+                  <div class="pill-strip">
+                    <div class="pill">Poa seedhead suppression</div>
+                    <div class="pill">Environmental stress physiology</div>
+                    <div class="pill">Applied turf management</div>
+                  </div>
+                </div>
+
+                <div class="hero-badge">
+                  <span class="icon">📍</span>
+                  <span>Based at the Valentine Turfgrass Research Center</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research themes -->
+      <section id="research">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">Research</p>
+            <h2 class="section-title">What we work on</h2>
+            <p class="section-intro">
+              Our research connects turfgrass stress physiology, plant growth regulators,
+              and on course management. Projects are designed with superintendents and sports turf managers in mind.
+            </p>
+          </header>
+
+          <div class="card-grid">
+            <article class="card">
+              <p class="card-tag">Area 1</p>
+              <h3 class="card-title">Poa annua seedhead control programs</h3>
+              <p class="card-body">
+                We evaluate PGR programs and supporting products for annual bluegrass seedhead suppression,
+                with a focus on mixed Poa and creeping bentgrass putting greens and fairways.
+              </p>
+              <ul class="card-list">
+                <li>Comparing two versus three application programs across fall and spring.</li>
+                <li>Testing ethephon, trinexapac ethyl, Civitas, and their combinations.</li>
+                <li>Assessing seedhead cover, turf quality, surface smoothness, and playability.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <p class="card-tag">Area 2</p>
+              <h3 class="card-title">Turfgrass under environmental stress</h3>
+              <p class="card-body">
+                Dr. Chhetri has a strong background in shade and drought stress, including work on turf type bermudagrass
+                under combined stress and performance under reduced light.
+              </p>
+              <ul class="card-list">
+                <li>Bermudagrass performance in low light environments.</li>
+                <li>Combined shade and drought effects on turf quality and persistence.</li>
+                <li>Traffic, temperature, and other stresses that affect golf and sports turf.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <p class="card-tag">Area 3</p>
+              <h3 class="card-title">Practical tools and decision support</h3>
+              <p class="card-body">
+                Long term, we aim to turn research into simple programs, timing guides, and scouting workflows
+                that fit within busy maintenance schedules.
+              </p>
+              <ul class="card-list">
+                <li>Calendar and physiology based timing schemes for PGRs.</li>
+                <li>Visual rating systems tied to seedhead cover and quality thresholds.</li>
+                <li>Optional use of NDVI meters or photo ratings where they provide extra value.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current project: your seedhead trial -->
+      <section id="project">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">Current project</p>
+            <h2 class="section-title">Improving Poa annua seedhead control programs</h2>
+            <p class="section-intro">
+              This M.S. project evaluates plant growth regulator programs for annual bluegrass seedhead suppression
+              on mixed Poa and creeping bentgrass greens and fairways at University Park.
+            </p>
+          </header>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Objectives</h3>
+              <ul class="project-list">
+                <li>
+                  Compare two versus three application programs that include a late fall timing and spring timings.
+                </li>
+                <li>
+                  Test the effect of Civitas Turf Defense when combined with ethephon and trinexapac ethyl.
+                </li>
+                <li>
+                  Measure total non structural carbohydrates in storage tissues to see how programs affect plant energy.
+                </li>
+                <li>
+                  Assess changes in root distribution and health in response to PGR programs.
+                </li>
+              </ul>
+
+              <div class="project-pill">
+                Treatments combine timing programs (fall and spring) with PGR combinations, plus untreated controls.
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Experimental approach</h3>
+              <ul class="project-list">
+                <li>Randomized complete block design on a mixed stand green and fairway.</li>
+                <li>Nine total treatments that compare timing programs and PGR combinations.</li>
+                <li>
+                  Weekly ratings for seedhead cover, suppression, and visual turf quality during the spring flush.
+                </li>
+                <li>
+                  Additional data such as canopy density, NDVI, moisture, firmness, and temperature where practical.
+                </li>
+                <li>
+                  Laboratory measurements of total non structural carbohydrates and root distribution on selected dates.
+                </li>
+              </ul>
+              <p style="font-size:0.8rem; color:var(--muted); margin-top:0.4rem;">
+                Results will be summarized into clear program recommendations that help superintendents decide when
+                to use two versus three applications and when to include Civitas in Poa seedhead programs.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- People -->
+      <section id="people">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">People</p>
+            <h2 class="section-title">Who we are</h2>
+            <p class="section-intro">
+              The Chhetri Lab is part of the Turfgrass Program in the Department of Plant Science at Penn State
+              University Park. We work closely with faculty, staff, students, and industry partners.
+            </p>
+          </header>
+
+          <div class="people-grid">
+            <article class="profile-card">
+              <div class="profile-avatar" aria-hidden="true">
+                M
+              </div>
+              <div>
+                <div class="profile-meta">
+                  <h3 class="profile-name">Dr. Manoj Chhetri</h3>
+                  <p class="profile-role">
+                    Assistant Teaching Professor of Turfgrass Science
+                  </p>
+                  <p class="profile-role">
+                    Principal Investigator, Chhetri Lab
+                  </p>
+                </div>
+                <p class="profile-text">
+                  Dr. Chhetri focuses on turfgrass management under environmental stresses such as shade, cold,
+                  heat, and traffic, and on the use of plant growth regulators to improve turf quality and resilience.
+                  He also has interests in turfgrass weeds and statistical analysis for applied field trials.
+                </p>
+                <div class="profile-links">
+                  <a class="chip-link" href="https://plantscience.psu.edu/directory/mkc6518" target="_blank" rel="noopener">
+                    Penn State profile
+                  </a>
+                  <a class="chip-link" href="https://scholar.google.com/citations?hl=en&user=xjjpdYkAAAAJ" target="_blank" rel="noopener">
+                    Google Scholar
+                  </a>
+                  <a class="chip-link" href="mailto:mkc6518@psu.edu">
+                    Email Dr. Chhetri
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <aside class="people-list" aria-label="Lab members list">
+              <p class="people-list-title">Current lab members</p>
+
+              <div class="people-row">
+                <div>
+                  <span>Nathan Swartz</span>
+                  <span class="people-role-small">M.S. Student - Turfgrass Management</span>
+                </div>
+                <span class="people-role-small">Poa seedhead control and PGR timing</span>
+              </div>
+
+              <!-- Add more members as you grow -->
+              <div class="people-row">
+                <div>
+                  <span>Student name</span>
+                  <span class="people-role-small">Role or degree program</span>
+                </div>
+                <span class="people-role-small">Project topic</span>
+              </div>
+
+              <p class="people-note">
+                We also collaborate with faculty and staff at the Valentine Turfgrass Research Center and with
+                superintendents who host on course field trials.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">Publications and outreach</p>
+            <h2 class="section-title">Selected outputs</h2>
+            <p class="section-intro">
+              Below are a few representative publications. A complete and current list is available on
+              Dr. Chhetri’s Google Scholar profile.
+            </p>
+          </header>
+
+          <ul class="pub-list">
+            <li class="pub-item">
+              <p class="pub-title">
+                Turf performance of seeded and clonal bermudagrasses under varying light environments.
+              </p>
+              <p class="pub-meta">
+                Urban Forestry and Urban Greening, 2019.
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1618866718303856" target="_blank" rel="noopener">
+                  View article
+                </a>
+              </p>
+            </li>
+            <li class="pub-item">
+              <p class="pub-title">
+                Effects of combined shade and drought stress on turf type bermudagrasses.
+              </p>
+              <p class="pub-meta">
+                International Turfgrass Society Research Journal, 2022.
+                <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/its2.68" target="_blank" rel="noopener">
+                  View article
+                </a>
+              </p>
+            </li>
+            <li class="pub-item">
+              <p class="pub-title">
+                Development of winter hardy fine leaf zoysiagrass hybrids for the upper transition zone.
+              </p>
+              <p class="pub-meta">
+                Crop Science, 2022.
+                <a href="https://acsess.onlinelibrary.wiley.com/doi/full/10.1002/csc2.20834" target="_blank" rel="noopener">
+                  View article
+                </a>
+              </p>
+            </li>
+            <li class="pub-item">
+              <p class="pub-title">
+                Additional publications, extension pieces, and theses.
+              </p>
+              <p class="pub-meta">
+                See the full list on
+                <a href="https://scholar.google.com/citations?hl=en&user=xjjpdYkAAAAJ" target="_blank" rel="noopener">
+                  Google Scholar
+                </a>.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Facilities and opportunities -->
+      <section id="facilities">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">Facilities and opportunities</p>
+            <h2 class="section-title">Where we work and how to get involved</h2>
+            <p class="section-intro">
+              Our research combines on site field trials at the Valentine Turfgrass Research Center with
+              greenhouse and laboratory work through the Center for Turfgrass Science.
+            </p>
+          </header>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Field and lab facilities</h3>
+              <ul class="project-list">
+                <li>
+                  Valentine Turfgrass Research Center with research greens, fairways, and sports turf surfaces.
+                </li>
+                <li>
+                  Mixed species greens and fairways used for Poa seedhead and PGR trials.
+                </li>
+                <li>
+                  Access to teaching and research labs in the Agricultural Industries Building and related facilities.
+                </li>
+              </ul>
+              <p style="font-size:0.8rem; color:var(--muted); margin-top:0.4rem;">
+                These facilities support work on seedhead control, turf stress management, and decision tools that
+                match real maintenance conditions.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <h3>Student and industry opportunities</h3>
+              <ul class="project-list">
+                <li>Graduate study in Turfgrass Management and related programs.</li>
+                <li>Undergraduate research assistant positions during the growing season.</li>
+                <li>On course collaborations with golf courses and sports facilities.</li>
+              </ul>
+              <p class="contact-note">
+                Prospective students can email Dr. Chhetri with a CV, a short statement of interest, and any turf
+                industry or research experience. Industry partners can contact the lab with basic information about
+                their facility and the type of project they have in mind.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">Contact</p>
+            <h2 class="section-title">Get in touch</h2>
+            <p class="section-intro">
+              Email is the best way to reach the lab. Students should include their program and current level.
+              Industry partners should include location, turf species, and main questions.
+            </p>
+          </header>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <div class="contact-row">
+                <p class="contact-label">Lab email</p>
+                <p class="contact-value">
+                  <a href="mailto:mkc6518@psu.edu">mkc6518@psu.edu</a>
+                </p>
+              </div>
+
+              <div class="contact-row">
+                <p class="contact-label">Office</p>
+                <p class="contact-value">
+                  19 Tyson Building<br>
+                  Department of Plant Science<br>
+                  Penn State University Park
+                </p>
+              </div>
+
+              <div class="contact-row">
+                <p class="contact-label">Field site</p>
+                <p class="contact-value">
+                  Valentine Turfgrass Research Center<br>
+                  Center for Turfgrass Science<br>
+                  University Park, Pennsylvania
+                </p>
+              </div>
+
+              <p class="contact-note">
+                For formal graduate applications, follow the instructions provided by the Department of Plant Science
+                and the Graduate School in addition to contacting the lab.
+              </p>
+            </article>
+
+            <!-- Visual only contact form -->
+            <article class="contact-card">
+              <h3 style="margin-bottom: 0.5rem;">Quick message (visual only)</h3>
+              <p class="contact-note">
+                On GitHub Pages this form does not submit anywhere unless you connect it to a service.
+                You can keep it as a visual element or remove it.
+              </p>
+
+              <form class="contact-form">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="you@example.com" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" placeholder="Your question or idea"></textarea>
+                </div>
+                <button type="button" class="btn-ghost">
+                  Form placeholder for GitHub Pages
+                </button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            © <span id="year"></span> Chhetri Lab - Turfgrass Management and PGR Programs. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="#about">Back to top ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("is-open");
+    });
+
+    // Close mobile nav when clicking a link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+      });
+    });
+  </script>
+</body>
+</html>
