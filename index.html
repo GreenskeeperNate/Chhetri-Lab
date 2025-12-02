@@ -18,6 +18,20 @@
   <!-- Simple base styling -->
   <style>
     :root {
+      /* Fix sticky header overlap */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #d1e4ff;
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  padding-top: 120px; /* adjusts how far below the header the hero starts */
+}
+
       --bg: #020617;
       --bg-alt: #020819;
       --card: #0f172a;
