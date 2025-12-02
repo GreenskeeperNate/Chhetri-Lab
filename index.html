@@ -20,15 +20,14 @@
     :root {
       /* Fix sticky header overlap */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: rgba(15, 23, 42, 0.98); /* or your current header background */
-  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
-  backdrop-filter: blur(16px);
+  z-index: 999;              /* keeps it on top of the cards */
+  backdrop-filter: blur(14px);
+  background: rgba(15, 23, 42, 0.96); /* or whatever you were using before */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -64,15 +63,15 @@ section {
       padding: 0;
     }
 
-    body {
+ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: radial-gradient(circle at top, #111827 0, #020617 55%);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  padding-top: 80px; /* add this line */
 }
+
 
     a {
       color: var(--link);
